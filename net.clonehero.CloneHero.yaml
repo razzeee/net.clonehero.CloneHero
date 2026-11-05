@@ -35,8 +35,8 @@ modules:
           type: json
           url: https://api.github.com/repos/clonehero-game/releases/releases/latest
           tag-query: .tag_name
-          version-query: .tag_name | sub("^v"; "")
-          url-query: '"https://github.com/clonehero-game/releases/releases/download/v" + $tag + "/Linux.x86_64-Standalone.tar"'
+          version-query: .tag_name | sub("^[vV]"; "")
+          url-query: '"https://github.com/clonehero-game/releases/releases/download/" + $tag + "/Linux.x86_64-Standalone.tar"'
       - type: file
         path: net.clonehero.CloneHero.desktop
       - type: file
